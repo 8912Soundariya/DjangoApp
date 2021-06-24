@@ -5,9 +5,7 @@ from .models import Student
 class studentRegistration(forms.ModelForm):
     class Meta:
         model = Student
-        # fields = ['first_name', 'last_name', 'age', 'email' , 'contact']
-        # fields = '__all__'
-        exclude = ['contact']
+        fields = '__all__'
         
 # Django Form without model        
 class EmployeeRegistration(forms.Form):

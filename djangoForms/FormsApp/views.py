@@ -4,7 +4,22 @@ from .forms import studentRegistration, EmployeeRegistration
 
 # Create your views here.
 def showFormData(request):
-    fm = studentRegistration()
+    if request.method == 'POST':
+        fm = studentRegistration(request.POST)
+        if fm.is_valid():
+            Firstname = fm.cleaned_data['first_name']
+            Lastname = fm.cleaned_data['last_name']
+            Contact = fm.cleaned_data['contact']
+            Email =  fm.cleaned_data['email']
+            Age = fm.cleaned_data['age']
+            
+            print('Name: ', Firstname + Lastname)
+            print('Email Id: ', Email)
+            print('Age : ', Age)
+            print('Contact No.', Contact)
+            fm = studentRegistration() # Clear the form
+    else:
+        fm = studentRegistration()
     return render(request, 'register/stuRegistration.html', {'form': fm})
     
 def showEmpForm(request):
