@@ -21,6 +21,7 @@ def showEmpForm(request):
             print('Email Id: ', Email)
             print('Are you indian? : ', Indian)
             print('Contact No.', Mobile)
+            fm = EmployeeRegistration() # Clear the form
     else:
         fm = EmployeeRegistration()
         print('Hitted the GET request')
