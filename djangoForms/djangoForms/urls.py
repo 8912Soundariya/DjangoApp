@@ -19,6 +19,6 @@ from FormsApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('stu-registration/', views.showFormData),
-    path('emp-registration/', views.showEmpForm)
+    path('stu-registration/', views.showFormData, name='studentForm'),
+    path('emp-registration/', views.showEmpForm, name='employeeForm')
 ]

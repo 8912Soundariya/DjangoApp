@@ -6,6 +6,20 @@ class studentRegistration(forms.ModelForm):
     class Meta:
         model = Student
         fields = '__all__'
+        labels = {
+            'first_name': 'Enter your first name here',
+            'last_name': 'Enter your last name here',
+            'email': 'Enter valid email id'
+        }
+        help_text = {'last_name': 'Enter your full surname'}
+        error_messages = {
+            'age': {'required':'Enter your right age','max_length':'Age max_length is 2 digit'},
+            'first_name': {'required':'Name is Mandatory'}
+        }
+        widgets = {
+            'first_name':forms.TextInput(attrs={'class':'nameFirst','placeholder':'Name please...'}),
+            'last_name':forms.TextInput()
+        }
         
 # Django Form without model        
 class EmployeeRegistration(forms.Form):
