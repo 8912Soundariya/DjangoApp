@@ -28,3 +28,4 @@ class EmployeeRegistration(forms.Form):
     Email     = forms.EmailField(label="Enter the valid email id", max_length=50)
     Indian    = forms.BooleanField()
     Mobile    = forms.DecimalField(label="Enter the 10 digit no's")
+    File      = forms.FileField() # for creating file input 

@@ -6,4 +6,5 @@ class Student(models.Model):
     last_name  = models.CharField(max_length=30)  
     contact    = models.IntegerField()  
     email      = models.EmailField(max_length=50)  
-    age        = models.IntegerField()  
+    age        = models.IntegerField()
+    file       = models.FileField() # for creating file input 

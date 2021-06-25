@@ -5,7 +5,7 @@
     <title>Student Registration</title>  
 </head>  
 <body>
-    <form method="POST" class="post-form" novalidate=""> 
+    <form method="POST" class="post-form" novalidate="" enctype="multipart/form-data"> 
         {% csrf_token %}
         {{form.as_p}}  
         <button type="submit" class="save btn btn-default">Save</button>  
